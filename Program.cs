@@ -2,14 +2,12 @@
 // длина которого меньше или равна 3 символам.  Исходный массив можно ввести с клавиатуры, 
 // либо задать в начале выполнения алгоритма.
 
-string[] array1 = new string[9] {"22", "55555", "333", "4444", "A", "BB", "CCC", "DDDD", "1"};
-
 int Array2Length(string[] array)
 {
     int count = 0;
-    for (int i = 0; i < array1.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-    if(array1[i].Length <= 3)
+    if(array[i].Length <= 3)
         {
         count++;
         }
@@ -17,6 +15,24 @@ int Array2Length(string[] array)
     return count;
 }    
 
+void FillArray(string[] arrayX, string[] arrayY)
+{
+    int count = 0;
+    for (int i = 0; i < arrayX.Length; i++)
+    {
+    if(arrayX[i].Length <= 3)
+        {
+        arrayY[count] = arrayX[i];
+        count++;
+        }
+    }
+}
+
+
+
+string[] array1 = new string[9] {"22", "55555", "333", "4444", "A", "BB", "CCC", "DDDD", "1"};
 int L = Array2Length(array1);
+string[] array2 = new string[L];
+
 
 Console.Write(L);
